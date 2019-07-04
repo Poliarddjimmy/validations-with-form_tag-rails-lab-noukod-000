@@ -10,7 +10,15 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.create(author_params)
 
-    redirect_to author_path(@author)
+    if @author.valid?
+      @author.save
+      redirect_to author_path(@author)
+    else
+      # re-render the :new template WITHOUT throwing away the invalid @author
+      render :new
+    end
+
+
   end
 
   private
