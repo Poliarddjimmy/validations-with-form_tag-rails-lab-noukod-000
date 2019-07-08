@@ -34,7 +34,7 @@ RSpec.describe AuthorsController do
     it "creates successfully" do
       # expect(bro_found).to be_a(Author)
     end
-    
+
     it "redirects to show page" do
       # expect(response).to redirect_to(author_path(bro_found))
     end
